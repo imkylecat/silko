@@ -22,10 +22,10 @@ Maintainer: Amy While <support@anamy.gay>
 Installed-Size: 1968
 Depends: firmware (>= 14.0)
 Filename: debs/com.amywhile.aemulo_2.0-dd2a2db_iphoneos-arm.deb
-Size: 611648
-MD5sum: 8904a3babdc679a0f2e04e348dcd40c1
-SHA1: 41ab3d5010e6ed58974fcb32b4bf314548416af0
-SHA256: fce5d065862c2a1ff4993b32c4104bfb0f31c7a2351beeade5cce86fa051bce8
+Size: 611618
+MD5sum: a1459528e7fec78ce5e96af5e3d1e530
+SHA1: 7990b29dd772f919f567f0be972d48a67339597f
+SHA256: 9798674fd32694b182c3041476cee7316f92417af1e1f9c656ba4e0a01f25a1e
 Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
@@ -39,10 +39,10 @@ Installed-Size: 19616
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm.deb
-Size: 7159610
-MD5sum: 7b9712e127717e0d3909b5358fc1394e
-SHA1: f10a3bbc99cccc12cf625ceb0fcc58f2f925ce17
-SHA256: 507b13d42b65feabf364055d2291e86a15fa66c90c5a246caff3f47d00aa2a43
+Size: 7157156
+MD5sum: 79e6bbf50aa7e16b411674354a6e55d1
+SHA1: 339f8f01a490e4284b1620c283a0068bd0c21053
+SHA256: e7e5bb4694698ca86531661b3159a0aea18dd0eb7e8b8996ed759819e59f446f
 Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
@@ -106,10 +106,10 @@ Maintainer: Amy While <support@anamy.gay>
 Installed-Size: 1968
 Depends: firmware (>= 14.0)
 Filename: debs/com.amywhile.aemulo_2.0-dd2a2db_iphoneos-arm64.deb
-Size: 611962
-MD5sum: 23bdd02bbbb062a1ec5fee17f6c68384
-SHA1: f612221468445bec7c9f4d8b748acc6f0e0045eb
-SHA256: 8bf368c1c921aa8018e5414b515ffe00801ee5fa0520dd0606e8b42054d74053
+Size: 612002
+MD5sum: aa647543269c6f9bf9ab67a91557fc88
+SHA1: 942d18f5a34c6563f650b4994e4b3a247cf5d5c8
+SHA256: 57c85d81310a191792575db8126e81e8b3fdfc03aa165649b11c62a06905e83b
 Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
@@ -123,10 +123,10 @@ Installed-Size: 19616
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm64.deb
-Size: 7157030
-MD5sum: c3e1840b2a365c1c4141dec99d56bc4f
-SHA1: e3081ca08fc5636b4c09f3633dba498226febfa8
-SHA256: 370a3b85a154d74685c01fa28857f72e75b7e82d34525467694b52c2ae61ab8f
+Size: 7156260
+MD5sum: ef1a2c925059195bab57ae64bfa94eb6
+SHA1: e28adb5627070555973e2ba10ab99f9d2603e902
+SHA256: 5e6db3f7b516269344c82c254a6c62b1ded3e9b2bbb3cf3983a43f8b7022d81b
 Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
