@@ -77,6 +77,26 @@ Author: CloudySn0w
 Name: BTLoader
 Tag: compatible_min::ios14.0
 
+Package: com.level3tjg.redditfilter
+Version: 1.1.8
+Architecture: iphoneos-arm
+Maintainer: level3tjg
+Installed-Size: 96
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: debs/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb
+Size: 17460
+MD5sum: a5ec7b68de9d129d5319750cbb6c99f7
+SHA1: b828bb844e8da2a376056b35311f93a299619180
+SHA256: 562da3be93a103958aaec98d93f6357d0e598edfb4e7e2ad102b52c1a1ebe18b
+SHA512: 605fbb66005429a253e5d61a098eba8e152ef51e20205eac3dc3e7f5756e98c4d2cfd0273d7f27c55a6c957e7982cb86177980c99a61ffca93c0080459b583d1
+Section: Tweaks
+Homepage: https://github.com/level3tjg/RedditFilter
+Description: Filter out unwanted content from your Reddit feed
+Author: level3tjg
+Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.redditfilter
+Name: RedditFilter
+Tag: compatible_min::ios11.0
+
 Package: com.socuul.scinsta
 Version: 1.1.1
 Architecture: iphoneos-arm
@@ -211,6 +231,26 @@ Homepage: https://github.com/CloudySn0w/BTLoader
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
 Name: BTLoader
+Tag: compatible_min::ios15.0
+
+Package: com.level3tjg.redditfilter
+Version: 1.1.8
+Architecture: iphoneos-arm64
+Maintainer: level3tjg
+Installed-Size: 96
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: debs/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb
+Size: 17564
+MD5sum: d81fc959a63b5fd495dbada97c678eaa
+SHA1: 06adad270a695d7cc199ab4721711a29fb2cfbd8
+SHA256: 19bb91cd9778e3d188aebdc5d56c0539f72a8682ae75f42f410b24b4fe14e66a
+SHA512: 52db7a91a0139591b2b7472970acfedd0c5645f0a555c880ea61a85908eb55b46020160aa531db5931c079a126b15b3711c5c6a2360e2becc4a1244e5dc412ba
+Section: Tweaks
+Homepage: https://github.com/level3tjg/RedditFilter
+Description: Filter out unwanted content from your Reddit feed
+Author: level3tjg
+Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.redditfilter
+Name: RedditFilter
 Tag: compatible_min::ios15.0
 
 Package: com.socuul.scinsta
