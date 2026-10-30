@@ -78,11 +78,13 @@ jobs:
             mkdir -p "$root/DEBIAN" "$root${prefix}/etc/apt/trusted.gpg.d"
             gpg --dearmor < silko.asc > "$root${prefix}/etc/apt/trusted.gpg.d/silko.gpg"
             chmod 644 "$root${prefix}/etc/apt/trusted.gpg.d/silko.gpg"
+            size=$(du -sk --exclude=DEBIAN "$root" | cut -f1)
             cat > "$root/DEBIAN/control" << EOF
           Package: silko-keyring
           Name: Silko Keyring
           Version: ${VERSION}
           Architecture: ${arch}
+          Installed-Size: ${size}
           Maintainer: Kyle
           Author: Kyle
           Section: Repo Managers
@@ -148,6 +150,22 @@ jobs:
         run: |
           dpkg-scanpackages --arch iphoneos-arm debs > Packages || true
           dpkg-scanpackages --arch iphoneos-arm64 debs >> Packages || true
+
+      - name: Add SHA512 to Packages
+        run: |
+          # dpkg-scanpackages only writes MD5sum/SHA1/SHA256; add SHA512 after SHA256
+          awk '
+            /^Filename: / { file = substr($0, 11) }
+            { print }
+            /^SHA256: / {
+              cmd = "sha512sum \"" file "\""
+              cmd | getline out
+              close(cmd)
+              split(out, h, " ")
+              print "SHA512: " h[1]
+            }
+          ' Packages > Packages.new
+          mv Packages.new Packages
 
       - name: Strip unwanted fields from Packages
         run: |
