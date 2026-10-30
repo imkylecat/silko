@@ -32,6 +32,29 @@ jobs:
         with:
           fetch-depth: 0          # full history so git commit works nicely
 
+      - name: Remove old versions of debs
+        run: |
+          # Keep only the newest version of each package per architecture
+          declare -A newest_ver newest_file
+          for deb in debs/*.deb; do
+            pkg=$(dpkg-deb -f "$deb" Package)
+            ver=$(dpkg-deb -f "$deb" Version)
+            arch=$(dpkg-deb -f "$deb" Architecture)
+            key="${pkg}|${arch}"
+            if [ -z "${newest_ver[$key]}" ]; then
+              newest_ver[$key]=$ver
+              newest_file[$key]=$deb
+            elif dpkg --compare-versions "$ver" gt "${newest_ver[$key]}"; then
+              echo "Removing old ${newest_file[$key]} (superseded by ${deb})"
+              rm -f "${newest_file[$key]}"
+              newest_ver[$key]=$ver
+              newest_file[$key]=$deb
+            else
+              echo "Removing old ${deb} (superseded by ${newest_file[$key]})"
+              rm -f "$deb"
+            fi
+          done
+
       - name: Generate Packages file
         run: |
           dpkg-scanpackages --arch iphoneos-arm debs > Packages || true
@@ -87,7 +110,8 @@ jobs:
           git config user.email "actions@github.com"
           
           git add Packages Packages.bz2 Release || true
-          git commit -m "chore: update Packages & bz2 [ci skip]" || echo "No changes to commit"
+          git add -A debs/
+          git commit -m "chore: prune old debs, update Packages & bz2 [ci skip]" || echo "No changes to commit"
           git pull --rebase
           git push
         env:
