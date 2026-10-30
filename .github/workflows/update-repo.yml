@@ -20,6 +20,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false   # queue runs so two never push at once
+
 permissions:
   contents: write               # needed to commit the updated Packages/Release back
 
@@ -29,7 +33,7 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0          # full history so git commit works nicely
 
@@ -216,8 +220,18 @@ jobs:
           git add InRelease Release.gpg silko.asc 2>/dev/null || true
           git add -A debs/
           git commit -m "chore: prune old debs, update Packages indexes [ci skip]" || echo "No changes to commit"
-          git pull --rebase
-          git push
+          # Retry in case another workflow pushed at the same time
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase && git push; then
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
+            if [ "$attempt" = 5 ]; then
+              echo "Push failed after ${attempt} attempts"
+              exit 1
+            fi
+            sleep $((attempt * 15))
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # built-in token works here
 

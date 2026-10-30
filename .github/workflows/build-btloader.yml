@@ -32,10 +32,10 @@ jobs:
 
     steps:
       - name: Checkout this repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Checkout CloudySn0w/BTLoader
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: CloudySn0w/BTLoader
           ref: ${{ github.event.inputs.commit_id || 'main' }}
@@ -78,14 +78,14 @@ jobs:
           echo "package=$(ls -t main/packages/*.deb | head -n1)" >> "$GITHUB_OUTPUT"
 
       - name: Upload .deb artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: BTLoader-${{ matrix.mode }}_${{ env.BTLOADER_VERSION }}
           path: ${{ steps.package_name.outputs.package }}
           if-no-files-found: error
 
       - name: Upload deb for commit job
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: btloader-deb-${{ matrix.mode }}
           path: ${{ steps.package_name.outputs.package }}
@@ -99,18 +99,18 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
       - name: Download rootless deb
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: btloader-deb-rootless
           path: debs/
 
       - name: Download rootfull deb
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: btloader-deb-rootfull
           path: debs/
@@ -121,7 +121,17 @@ jobs:
           git config user.email "actions@github.com"
           git add debs/*.deb
           git commit -m "chore: add BTLoader rootless + rootfull debs [ci skip]" || echo "No changes to commit"
-          git pull --rebase
-          git push
+          # Retry in case another workflow pushed at the same time
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase && git push; then
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
+            if [ "$attempt" = 5 ]; then
+              echo "Push failed after ${attempt} attempts"
+              exit 1
+            fi
+            sleep $((attempt * 15))
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
