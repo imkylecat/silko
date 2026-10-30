@@ -104,9 +104,9 @@ Installed-Size: 1852
 Depends: firmware (<< 8.0) | firmware (>= 11.0) | com.rpetrich.rocketbootstrap
 Filename: debs/ws.hbang.common_1.17.1_iphoneos-arm.deb
 Size: 208276
-MD5sum: e79a315fddd4508bf141756f2f229ee9
-SHA1: 9b8633a49ce78979bbbe247245d2cccb60abf09b
-SHA256: d89cf6d098bfc0804c6178a87f3a51dbf228eb6406e890324890d42ad7a41552
+MD5sum: 18f0727da1bad7b606fc4f3068d8de1f
+SHA1: 52838116d8e33179e30cac97cd03e35fc0575a10
+SHA256: 70c906c9070c076f12abf82f1560a50dd5aa6d127a99648b87feb5919382f97a
 Section: Development
 Description: Support library for tweaks
 Tag: role::developer, compatible_min::ios5.0
@@ -222,9 +222,9 @@ Installed-Size: 3132
 Depends: firmware (>= 15.0)
 Filename: debs/ws.hbang.common_2.0_iphoneos-arm64.deb
 Size: 199086
-MD5sum: 0c4cf0911e00a61037a76e9338097118
-SHA1: 4af542b4e180615318cb2d9b4ecb52eb796be052
-SHA256: c0d3d1fafcd0f745dec9a2f18980a1b4e6e5979cd12a3dadfdc5c2774c210fc5
+MD5sum: 6e6efce70ce92b0e8e292d4f10f8ef00
+SHA1: 6a75347e5dfe5f683a2e20768654372b8173e9f0
+SHA256: 93e3d1f64199351bab1540746f48b1be83e19a8e6ae7f0c0bba870be66b8d672
 Section: Development
 Description: Support library for tweaks
 Tag: role::developer, compatible_min::ios15.0
