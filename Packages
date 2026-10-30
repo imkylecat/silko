@@ -63,12 +63,13 @@ Installed-Size: 152
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound
 Filename: debs/com.cloudysnow.btloader_1.0.2_iphoneos-arm.deb
-Size: 29312
-MD5sum: d582ec7407bc81b0208a4838c8c56c21
-SHA1: 1c01972c7c3b572b57e2b80b8d56fbd25cd41b80
-SHA256: 5b894c3cfd6dcb3778c9cec47475c50d6c374de837bff06b99c90f93de564105
-SHA512: 60ab2727a5f5a274de57869a2707420856ca5a2f10502d40a4b5d4441d27d5f6012757abba314d532c474d868167d5bef7da076d1455b5903c5851d1821e43d1
+Size: 29328
+MD5sum: 060b13444e7aef3116350173f6e4ea72
+SHA1: 3e26073531086d5a381312a6825d984bd9583c57
+SHA256: 1bd9d1bd8fdfdb0fb47c40135b817807a9d562c76090cdf9d11c42f4b7e20b17
+SHA512: 6fde2417d1fe0141d19881a9821d61aded1a9493adad2914bb64e74b0c055addf014a70d27b4ba74323a0200819c932790503f02d2ca9d9c927bd9ca38def7b6
 Section: Tweaks
+Homepage: https://github.com/CloudySn0w/BTLoader
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
 Name: BTLoader
@@ -197,11 +198,12 @@ Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound
 Filename: debs/com.cloudysnow.btloader_1.0.2_iphoneos-arm64.deb
 Size: 29394
-MD5sum: 7e34852d4c3dbe5c12ee2d8b748aca9c
-SHA1: 34a11ccc342f2d462d5a739a01584d5720426c0e
-SHA256: d960d52fca8c72894f0ad625d38fe46ec5a6806ea72850d6e256654950921391
-SHA512: e00cced97d583506c4ef7538af3f0d470cd1d9f7b4104d4947937ef84f6138739fa7d46a56ca5033af32e52710fa4c7a399725adbb65905e10a3cb024ca01894
+MD5sum: 04daef5ace35d482e00575ba1f585a64
+SHA1: dec46c3098a93b987abb0ec5592a6bc9b930159b
+SHA256: c2784229116418dd0469180a958113a67f835f515f709b5523026671a9b75b95
+SHA512: c2c16f22f34bf99058a320e743e72097f949b36b00bf210d36ce1129ca54561c96e5989b370a36b8e8efb9e8ea19884d41475ad1b4caaf788a2f7df3266f69f9
 Section: Tweaks
+Homepage: https://github.com/CloudySn0w/BTLoader
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
 Name: BTLoader
