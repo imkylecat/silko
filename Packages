@@ -15,6 +15,8 @@ Section: Tweaks
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
 Name: KettuTweak
+Homepage: https://github.com/C0C0B01/KettuTweak
+Tag: compatible_min::ios14.0
 
 Package: com.amywhile.aemulo
 Version: 2.0-dd2a2db
@@ -32,6 +34,8 @@ Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
 Name: Aemulo
+Homepage: https://github.com/Aemulo/Release
+Tag: compatible_min::ios14.0
 
 Package: com.bandarhl.bhtwitter
 Version: 5.2
@@ -50,6 +54,8 @@ Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
 Name: NFB-BHTwitter
+Homepage: https://github.com/NeoFreeBird/tweak
+Tag: compatible_min::ios14.0
 
 Package: com.cloudysnow.btloader
 Version: 1.0.2
@@ -68,6 +74,8 @@ Section: Tweaks
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
 Name: BTLoader
+Homepage: https://github.com/CloudySn0w/BTLoader
+Tag: compatible_min::ios14.0
 
 Package: com.socuul.scinsta
 Version: 1.1.1
@@ -86,6 +94,7 @@ Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
 Author: SoCuul
 Name: SCInsta
+Tag: compatible_min::ios16.5
 
 Package: silko-keyring
 Version: 2026.10.30
@@ -102,6 +111,7 @@ Section: Repo Managers
 Description: Installs the Silko signing key so apt can verify the repo
 Author: Kyle
 Name: Silko Keyring
+Homepage: https://github.com/imkylecat/silko
 
 Package: ws.hbang.common
 Version: 1.17.1
@@ -123,6 +133,7 @@ Depiction: https://chariz.com/get/cephei
 Dev: hbang
 Name: Cephei Tweak Support
 Support: https://hashbang.productions/support/
+Homepage: https://github.com/hbang/libcephei
 
 Package: cocobo1.kettu.tweak
 Version: 2.0.0
@@ -141,6 +152,8 @@ Section: Tweaks
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
 Name: KettuTweak
+Homepage: https://github.com/C0C0B01/KettuTweak
+Tag: compatible_min::ios15.0
 
 Package: com.amywhile.aemulo
 Version: 2.0-dd2a2db
@@ -158,6 +171,8 @@ Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
 Name: Aemulo
+Homepage: https://github.com/Aemulo/Release
+Tag: compatible_min::ios15.0
 
 Package: com.bandarhl.bhtwitter
 Version: 5.2
@@ -176,6 +191,8 @@ Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
 Name: NFB-BHTwitter
+Homepage: https://github.com/NeoFreeBird/tweak
+Tag: compatible_min::ios15.0
 
 Package: com.cloudysnow.btloader
 Version: 1.0.2
@@ -194,6 +211,8 @@ Section: Tweaks
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
 Name: BTLoader
+Homepage: https://github.com/CloudySn0w/BTLoader
+Tag: compatible_min::ios15.0
 
 Package: com.socuul.scinsta
 Version: 1.1.1
@@ -212,6 +231,7 @@ Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
 Author: SoCuul
 Name: SCInsta
+Tag: compatible_min::ios16.5
 
 Package: silko-keyring
 Version: 2026.10.30
@@ -228,6 +248,7 @@ Section: Repo Managers
 Description: Installs the Silko signing key so apt can verify the repo
 Author: Kyle
 Name: Silko Keyring
+Homepage: https://github.com/imkylecat/silko
 
 Package: ws.hbang.common
 Version: 2.0
@@ -248,4 +269,5 @@ Author: HASHBANG Productions <support@hbang.ws>
 Depiction: https://chariz.com/get/cephei
 Name: Cephei Tweak Support
 Support: https://hashbang.productions/support/
+Homepage: https://github.com/hbang/libcephei
 
