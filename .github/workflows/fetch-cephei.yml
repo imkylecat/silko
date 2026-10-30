@@ -65,6 +65,10 @@ jobs:
             fi
 
             out="debs/${PACKAGE}_${best_ver}_${arch}.deb"
+            if [ -f "$out" ]; then
+              echo "${out} already present"
+              continue
+            fi
             echo "Downloading ${PACKAGE} ${best_ver} (${arch})..."
             curl -fsSL -A "$USER_AGENT" -o "$out" "${REPO_URL}/${best_file#./}"
             echo "${best_sha}  ${out}" | sha256sum -c -

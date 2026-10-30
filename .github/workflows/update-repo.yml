@@ -8,13 +8,9 @@ on:
       - '.github/workflows/update-repo.yml'
   workflow_dispatch:            # lets you run it manually from Actions tab too
   workflow_run:
-    workflows: 
-      - "Fetch Aemulo Debs"
-      - "Fetch Cephei Debs"
-      - "Build BTLoader (Rootless + Rootful)"
-      - "Build KettuTweak (Rootless + Rootful)"
-      - "Build BHTwitter (Rootless + Rootful)"
-      - "Build SCInsta (Rootless + Rootful)"
+    workflows:                  # glob patterns, so names containing "+" must not be listed literally
+      - "Build *"
+      - "Fetch *"
     types:
       - completed
     branches:
