@@ -33,6 +33,66 @@ jobs:
         with:
           fetch-depth: 0          # full history so git commit works nicely
 
+      - name: Import GPG signing key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          if [ -z "$GPG_PRIVATE_KEY" ]; then
+            echo "GPG_PRIVATE_KEY secret not set — skipping signing"
+            echo "HAVE_KEY=false" >> "$GITHUB_ENV"
+            exit 0
+          fi
+          export GNUPGHOME="$RUNNER_TEMP/gnupg"
+          mkdir -m 700 "$GNUPGHOME"
+          printf '%s' "$GPG_PASSPHRASE" > "$GNUPGHOME/passphrase"
+          # Non-interactive signing for gpg and tools that call it (debsigs)
+          printf 'batch\npinentry-mode loopback\npassphrase-file %s\ndigest-algo SHA512\n' "$GNUPGHOME/passphrase" > "$GNUPGHOME/gpg.conf"
+          echo "allow-loopback-pinentry" > "$GNUPGHOME/gpg-agent.conf"
+          echo "$GPG_PRIVATE_KEY" | gpg --import
+          KEY_ID=$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $5; exit}')
+          KEY_CREATED=$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $6; exit}')
+          # Publish the public key so users can verify the repo
+          gpg --armor --export "$KEY_ID" > silko.asc
+          {
+            echo "HAVE_KEY=true"
+            echo "GNUPGHOME=$GNUPGHOME"
+            echo "KEY_ID=$KEY_ID"
+            echo "KEY_CREATED=$KEY_CREATED"
+          } >> "$GITHUB_ENV"
+
+      - name: Build keyring package
+        if: env.HAVE_KEY == 'true'
+        run: |
+          # Version comes from the key's creation date, so it only changes with a new key
+          VERSION=$(date -u -d "@${KEY_CREATED}" +%Y.%m.%d)
+          for target in "iphoneos-arm64 /var/jb" "iphoneos-arm "; do
+            read -r arch prefix <<< "$target"
+            out="debs/silko-keyring_${VERSION}_${arch}.deb"
+            if [ -f "$out" ]; then
+              echo "${out} already exists"
+              continue
+            fi
+            root=$(mktemp -d)
+            chmod 755 "$root"
+            mkdir -p "$root/DEBIAN" "$root${prefix}/etc/apt/trusted.gpg.d"
+            gpg --dearmor < silko.asc > "$root${prefix}/etc/apt/trusted.gpg.d/silko.gpg"
+            chmod 644 "$root${prefix}/etc/apt/trusted.gpg.d/silko.gpg"
+            cat > "$root/DEBIAN/control" << EOF
+          Package: silko-keyring
+          Name: Silko Keyring
+          Version: ${VERSION}
+          Architecture: ${arch}
+          Maintainer: Kyle
+          Author: Kyle
+          Section: Repo Managers
+          Description: Installs the Silko signing key so apt can verify the repo
+          EOF
+            sed -i 's/^ *//' "$root/DEBIAN/control"
+            dpkg-deb --root-owner-group -Zgzip -b "$root" "$out"
+            rm -rf "$root"
+          done
+
       - name: Remove old versions of debs
         run: |
           # Keep only the newest version of each package per architecture
@@ -54,6 +114,34 @@ jobs:
               echo "Removing old ${deb} (superseded by ${newest_file[$key]})"
               rm -f "$deb"
             fi
+          done
+
+      - name: Sign debs (debsigs origin signature)
+        if: env.HAVE_KEY == 'true'
+        run: |
+          # Same format as debsigs: a detached signature over debian-binary,
+          # control.tar.* and data.tar.* stored as a _gpgorigin member.
+          # Done by hand because debsigs doesn't recognise .zst members.
+          for deb in debs/*.deb; do
+            members=$(ar t "$deb" | grep -v '^_gpg')
+            if ar t "$deb" | grep -qx '_gpgorigin'; then
+              sig=$(mktemp)
+              ar p "$deb" _gpgorigin > "$sig"
+              # Skip debs already signed by the current key
+              if for m in $members; do ar p "$deb" "$m"; done \
+                  | gpg --status-fd 1 --verify "$sig" - 2>/dev/null | grep -q "VALIDSIG.*${KEY_ID}"; then
+                rm -f "$sig"
+                continue
+              fi
+              rm -f "$sig"
+              ar d "$deb" _gpgorigin
+            fi
+            echo "Signing ${deb}"
+            dir=$(mktemp -d)
+            for m in $members; do ar p "$deb" "$m"; done \
+              | gpg --openpgp --local-user "$KEY_ID" --detach-sign --output "$dir/_gpgorigin"
+            ar r "$deb" "$dir/_gpgorigin"
+            rm -rf "$dir"
           done
 
       - name: Generate Packages file
@@ -112,25 +200,12 @@ jobs:
           done
 
       - name: Sign Release (InRelease + Release.gpg)
-        env:
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        if: env.HAVE_KEY == 'true'
         run: |
-          if [ -z "$GPG_PRIVATE_KEY" ]; then
-            echo "GPG_PRIVATE_KEY secret not set — skipping signing"
-            exit 0
-          fi
-          export GNUPGHOME=$(mktemp -d)
-          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
-          KEY_ID=$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $5; exit}')
-          SIGN=(gpg --batch --yes --pinentry-mode loopback --passphrase "$GPG_PASSPHRASE" --local-user "$KEY_ID" --digest-algo SHA512)
-          "${SIGN[@]}" --clearsign --output InRelease Release
-          "${SIGN[@]}" --armor --detach-sign --output Release.gpg Release
-          # Publish the public key so users can verify the repo
-          gpg --armor --export "$KEY_ID" > silko.asc
+          gpg --yes --local-user "$KEY_ID" --clearsign --output InRelease Release
+          gpg --yes --local-user "$KEY_ID" --armor --detach-sign --output Release.gpg Release
           gpg --verify InRelease
           gpg --verify Release.gpg Release
-          rm -rf "$GNUPGHOME"
 
       - name: Commit updated indexes back to repo
         run: |
@@ -145,3 +220,7 @@ jobs:
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # built-in token works here
+
+      - name: Remove GPG key from runner
+        if: always()
+        run: rm -rf "$RUNNER_TEMP/gnupg"

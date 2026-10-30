@@ -45,6 +45,17 @@ jobs:
             exit 1
           fi
 
+          # Skip if this release's debs are already in the repo
+          missing=0
+          for url in $URLS; do
+            [ -f "debs/$(basename "$url")" ] || missing=1
+          done
+          if [ "$missing" = 0 ]; then
+            echo "Aemulo ${RELEASE} already present — nothing to do"
+            echo "AEMULO_UP_TO_DATE=true" >> "$GITHUB_ENV"
+            exit 0
+          fi
+
           # Remove old Aemulo debs
           rm -f debs/com.amywhile.aemulo_*.deb
 
@@ -59,6 +70,7 @@ jobs:
           ls -la debs/com.amywhile.aemulo_*.deb
 
       - name: Fix Section in deb control files
+        if: env.AEMULO_UP_TO_DATE != 'true'
         run: |
           for deb in debs/com.amywhile.aemulo_*.deb; do
             echo "Patching ${deb}..."
@@ -70,6 +82,7 @@ jobs:
           done
 
       - name: Commit new debs
+        if: env.AEMULO_UP_TO_DATE != 'true'
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
