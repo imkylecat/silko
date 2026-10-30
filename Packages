@@ -15,7 +15,6 @@ Section: Tweaks
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
 Name: KettuTweak
-Homepage: https://github.com/C0C0B01/KettuTweak
 Tag: compatible_min::ios14.0
 
 Package: com.amywhile.aemulo
@@ -34,7 +33,6 @@ Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
 Name: Aemulo
-Homepage: https://github.com/Aemulo/Release
 Tag: compatible_min::ios14.0
 
 Package: com.bandarhl.bhtwitter
@@ -54,7 +52,6 @@ Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
 Name: NFB-BHTwitter
-Homepage: https://github.com/NeoFreeBird/tweak
 Tag: compatible_min::ios14.0
 
 Package: com.cloudysnow.btloader
@@ -74,7 +71,6 @@ Section: Tweaks
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
 Name: BTLoader
-Homepage: https://github.com/CloudySn0w/BTLoader
 Tag: compatible_min::ios14.0
 
 Package: com.socuul.scinsta
@@ -102,16 +98,16 @@ Architecture: iphoneos-arm
 Maintainer: Kyle
 Installed-Size: 20
 Filename: debs/silko-keyring_2026.10.30_iphoneos-arm.deb
-Size: 1152
-MD5sum: a887f8c4e9757136cd24fbcde53792da
-SHA1: 544d6fe1abdd01829acaa1b8b1829db3f9f8e138
-SHA256: 966d9e0c5928ecda04d7cbf7f49440e116f34083f2fc9268122c58524142784c
-SHA512: e6e9ecd0127ba97982618b90364eeb5c4a7423e5ffccfe10398e00789e0d4941644cba7b2b9c70c00015579518cb2484f9fffd10c8297b70c750da1d3754b5d2
+Size: 1184
+MD5sum: 34dadf59dc2b2a10bd569e7c1777fd4b
+SHA1: 12bb0e00a8602d138b20925a91b9a174e239b179
+SHA256: 0208e88d5680350e35c03c8637ce8c19096910060b459cffc28c6a78f6c0cc94
+SHA512: fc4a857209f7e481b42a6cc1c5cd56752269f8e08fb13dc74a71a02cfc486fa2cd93973c6bc086c4210adc473722d705857dda2c3b9d91e3c99cb036baee58e8
 Section: Repo Managers
+Homepage: https://github.com/imkylecat/silko
 Description: Installs the Silko signing key so apt can verify the repo
 Author: Kyle
 Name: Silko Keyring
-Homepage: https://github.com/imkylecat/silko
 
 Package: ws.hbang.common
 Version: 1.17.1
@@ -133,7 +129,6 @@ Depiction: https://chariz.com/get/cephei
 Dev: hbang
 Name: Cephei Tweak Support
 Support: https://hashbang.productions/support/
-Homepage: https://github.com/hbang/libcephei
 
 Package: cocobo1.kettu.tweak
 Version: 2.0.0
@@ -152,7 +147,6 @@ Section: Tweaks
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
 Name: KettuTweak
-Homepage: https://github.com/C0C0B01/KettuTweak
 Tag: compatible_min::ios15.0
 
 Package: com.amywhile.aemulo
@@ -171,7 +165,6 @@ Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
 Name: Aemulo
-Homepage: https://github.com/Aemulo/Release
 Tag: compatible_min::ios15.0
 
 Package: com.bandarhl.bhtwitter
@@ -191,7 +184,6 @@ Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
 Name: NFB-BHTwitter
-Homepage: https://github.com/NeoFreeBird/tweak
 Tag: compatible_min::ios15.0
 
 Package: com.cloudysnow.btloader
@@ -211,7 +203,6 @@ Section: Tweaks
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
 Name: BTLoader
-Homepage: https://github.com/CloudySn0w/BTLoader
 Tag: compatible_min::ios15.0
 
 Package: com.socuul.scinsta
@@ -239,16 +230,16 @@ Architecture: iphoneos-arm64
 Maintainer: Kyle
 Installed-Size: 28
 Filename: debs/silko-keyring_2026.10.30_iphoneos-arm64.deb
-Size: 1178
-MD5sum: 8682c8e98d92fd355d8657e5b3c6e052
-SHA1: 2911736ed8b64394c3aaa30be086cb68518d3ada
-SHA256: 8c8a9a6521f27b4b67c601949fe782f61e2fda4b7c49171169d8721e42584250
-SHA512: 52452409d9912fd229f629d61ec80daf6c8dba263bc27b256607d4efaaca96987fa9f81fc924e27b71f7a51a4f8a44c563de605ab9514e47d2526383b2778375
+Size: 1208
+MD5sum: 9b26ea2f9b6fc5019abb0bd766cee52c
+SHA1: 336def4426c31b127196a761ce5b557205dd7a94
+SHA256: 5d01a4b75d4e9f3e76fc4a979cc117dacd91845bdca773f36a733d4369567b70
+SHA512: f62a00a3990f6d18d3db235093c632f2ab586ced19d8830d3e4360e2a8f188dc2e3c2629452541c767e21c4bd6517591d3f1a25644381edc3334b23ddabaccb8
 Section: Repo Managers
+Homepage: https://github.com/imkylecat/silko
 Description: Installs the Silko signing key so apt can verify the repo
 Author: Kyle
 Name: Silko Keyring
-Homepage: https://github.com/imkylecat/silko
 
 Package: ws.hbang.common
 Version: 2.0
@@ -269,5 +260,4 @@ Author: HASHBANG Productions <support@hbang.ws>
 Depiction: https://chariz.com/get/cephei
 Name: Cephei Tweak Support
 Support: https://hashbang.productions/support/
-Homepage: https://github.com/hbang/libcephei
 
