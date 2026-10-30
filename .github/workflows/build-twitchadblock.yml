@@ -1,0 +1,141 @@
+name: Build TwitchAdBlock (Rootless + Rootful)
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/build-twitchadblock.yml'
+  schedule:
+    - cron: "0 12 * * 0" # weekly check every Sunday at noon UTC
+  workflow_dispatch:
+    inputs:
+      commit_id:
+        description: "(Optional) TwitchAdBlock commit ID to build at"
+        default: ""
+        required: false
+        type: string
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build TwitchAdBlock (${{ matrix.mode }})
+    runs-on: macos-15
+    permissions:
+      contents: write
+
+    strategy:
+      matrix:
+        mode: [rootless, rootfull]
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v7
+
+      - name: Checkout level3tjg/TwitchAdBlock
+        uses: actions/checkout@v7
+        with:
+          repository: level3tjg/TwitchAdBlock
+          ref: ${{ github.event.inputs.commit_id || 'master' }}
+          path: main
+          submodules: true
+
+      - name: Add Homepage to control
+        run: |
+          if ! grep -q '^Homepage:' main/control; then
+            [ -n "$(tail -c1 main/control)" ] && echo >> main/control
+            echo "Homepage: https://github.com/level3tjg/TwitchAdBlock" >> main/control
+          fi
+
+      - name: Install Dependencies
+        run: brew install make dpkg ldid
+
+      - name: Add GNU Make to PATH
+        run: |
+          echo "$(brew --prefix make)/libexec/gnubin" >> "$GITHUB_PATH"
+
+      - name: Setup Theos
+        uses: Randomblock1/theos-action@v1
+
+      - name: Build Package (${{ matrix.mode }})
+        run: |
+          cd ${{ github.workspace }}/main
+          if [ "${{ matrix.mode }}" = "rootfull" ]; then
+            sed -i '' '/^THEOS_PACKAGE_SCHEME/d' Makefile
+            unset THEOS_PACKAGE_SCHEME
+            make package FINALPACKAGE=1
+          else
+            export THEOS_PACKAGE_SCHEME=rootless
+            make package FINALPACKAGE=1
+          fi
+        env:
+          THEOS_PACKAGE_SCHEME: ${{ matrix.mode == 'rootfull' && '' || 'rootless' }}
+
+      - name: Get package filename and version
+        id: package_name
+        run: |
+          # Version comes from the built deb: the Makefile's PACKAGE_VERSION overrides control
+          package=$(ls -t main/packages/*.deb | head -n1)
+          echo "package=${package}" >> "$GITHUB_OUTPUT"
+          echo "TWITCHADBLOCK_VERSION=$(dpkg-deb -f "$package" Version)" >> "$GITHUB_ENV"
+
+      - name: Upload .deb artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: TwitchAdBlock-${{ matrix.mode }}_${{ env.TWITCHADBLOCK_VERSION }}
+          path: ${{ steps.package_name.outputs.package }}
+          if-no-files-found: error
+
+      - name: Upload deb for commit job
+        uses: actions/upload-artifact@v7
+        with:
+          name: twitchadblock-deb-${{ matrix.mode }}
+          path: ${{ steps.package_name.outputs.package }}
+
+  commit-debs:
+    name: Commit .debs to repo
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Download rootless deb
+        uses: actions/download-artifact@v8
+        with:
+          name: twitchadblock-deb-rootless
+          path: debs/
+
+      - name: Download rootfull deb
+        uses: actions/download-artifact@v8
+        with:
+          name: twitchadblock-deb-rootfull
+          path: debs/
+
+      - name: Commit new .debs
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add debs/*.deb
+          git commit -m "chore: add TwitchAdBlock rootless + rootfull debs [ci skip]" || echo "No changes to commit"
+          # Retry in case another workflow pushed at the same time
+          for attempt in 1 2 3 4 5; do
+            if git pull --rebase && git push; then
+              break
+            fi
+            git rebase --abort 2>/dev/null || true
+            if [ "$attempt" = 5 ]; then
+              echo "Push failed after ${attempt} attempts"
+              exit 1
+            fi
+            sleep $((attempt * 15))
+          done
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
