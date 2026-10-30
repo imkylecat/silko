@@ -6,6 +6,7 @@ on:
     paths:
       - 'debs/**'
       - '.github/workflows/update-repo.yml'
+      - '.github/package-overrides'
   workflow_dispatch:            # lets you run it manually from Actions tab too
   workflow_run:
     workflows:                  # glob patterns, so names containing "+" must not be listed literally
@@ -52,6 +53,7 @@ jobs:
           echo "$GPG_PRIVATE_KEY" | gpg --import
           KEY_ID=$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $5; exit}')
           KEY_CREATED=$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $6; exit}')
+          KEY_FPR=$(gpg --list-secret-keys --with-colons | awk -F: '/^fpr/ {print $10; exit}')
           # Publish the public key so users can verify the repo
           gpg --armor --export "$KEY_ID" > silko.asc
           {
@@ -59,6 +61,7 @@ jobs:
             echo "GNUPGHOME=$GNUPGHOME"
             echo "KEY_ID=$KEY_ID"
             echo "KEY_CREATED=$KEY_CREATED"
+            echo "KEY_FPR=$KEY_FPR"
           } >> "$GITHUB_ENV"
 
       - name: Build keyring package
@@ -151,6 +154,53 @@ jobs:
           dpkg-scanpackages --arch iphoneos-arm debs > Packages || true
           dpkg-scanpackages --arch iphoneos-arm64 debs >> Packages || true
 
+      - name: Apply package overrides
+        run: |
+          python3 - << 'PY'
+          import re
+
+          def stanzas(text):
+              out = []
+              for block in re.split(r"\n\s*\n", text.strip()):
+                  fields = []
+                  for line in block.splitlines():
+                      if not line or line.startswith("#"):
+                          continue
+                      if line[0] in " \t" and fields:
+                          fields[-1][1] += "\n" + line
+                      else:
+                          key, _, value = line.partition(":")
+                          fields.append([key, value.strip()])
+                  if fields:
+                      out.append(fields)
+              return out
+
+          overrides = stanzas(open(".github/package-overrides").read())
+          packages = stanzas(open("Packages").read())
+          for pkg in packages:
+              info = dict(pkg)
+              # General stanzas first, then architecture-specific ones
+              matches = sorted(
+                  (o for o in overrides
+                   if dict(o).get("Package") == info.get("Package")
+                   and dict(o).get("Architecture", info.get("Architecture")) == info.get("Architecture")),
+                  key=lambda o: "Architecture" in dict(o))
+              for o in matches:
+                  for key, value in o:
+                      if key in ("Package", "Architecture"):
+                          continue
+                      for field in pkg:
+                          if field[0] == key:
+                              field[1] = value
+                              break
+                      else:
+                          pkg.append([key, value])
+
+          with open("Packages", "w") as f:
+              for pkg in packages:
+                  f.write("".join(f"{k}: {v}\n" for k, v in pkg) + "\n")
+          PY
+
       - name: Add SHA512 to Packages
         run: |
           # dpkg-scanpackages only writes MD5sum/SHA1/SHA256; add SHA512 after SHA256
@@ -194,6 +244,11 @@ jobs:
           Description: Personal repo with tweaks
           Date: $(date -Ru)
           EOF
+
+          # Only this key may sign future Release files (newer apt enforces it)
+          if [ -n "$KEY_FPR" ]; then
+            echo "Signed-By: ${KEY_FPR}" >> Release
+          fi
 
           # Add MD5/SHA256/SHA512 of Packages* with proper Debian format: hash size filename
           echo "MD5Sum:" >> Release
