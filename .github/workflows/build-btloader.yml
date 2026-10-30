@@ -42,6 +42,13 @@ jobs:
           path: main
           submodules: true
 
+      - name: Add Homepage to control
+        run: |
+          if ! grep -q '^Homepage:' main/control; then
+            [ -n "$(tail -c1 main/control)" ] && echo >> main/control
+            echo "Homepage: https://github.com/CloudySn0w/BTLoader" >> main/control
+          fi
+
       - name: Install Dependencies
         run: brew install make dpkg ldid
 

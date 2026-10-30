@@ -45,10 +45,13 @@ jobs:
             exit 1
           fi
 
-          # Skip if this release's debs are already in the repo
+          # Skip if this release's debs are already in the repo (and patched)
           missing=0
           for url in $URLS; do
-            [ -f "debs/$(basename "$url")" ] || missing=1
+            deb="debs/$(basename "$url")"
+            if [ ! -f "$deb" ] || [ -z "$(dpkg-deb -f "$deb" Homepage)" ]; then
+              missing=1
+            fi
           done
           if [ "$missing" = 0 ]; then
             echo "Aemulo ${RELEASE} already present — nothing to do"
@@ -69,7 +72,7 @@ jobs:
           echo "Downloaded debs:"
           ls -la debs/com.amywhile.aemulo_*.deb
 
-      - name: Fix Section in deb control files
+      - name: Fix Section and add Homepage in deb control files
         if: env.AEMULO_UP_TO_DATE != 'true'
         run: |
           for deb in debs/com.amywhile.aemulo_*.deb; do
@@ -77,6 +80,7 @@ jobs:
             TMPDIR=$(mktemp -d)
             dpkg-deb -R "$deb" "$TMPDIR"
             sed -i 's/^Section: Tweaks$/Section: Utilities/' "$TMPDIR/DEBIAN/control"
+            grep -q '^Homepage:' "$TMPDIR/DEBIAN/control" || echo "Homepage: https://github.com/Aemulo/Release" >> "$TMPDIR/DEBIAN/control"
             dpkg-deb -b "$TMPDIR" "$deb"
             rm -rf "$TMPDIR"
           done
