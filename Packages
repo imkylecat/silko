@@ -6,12 +6,13 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound, com.cloudysnow.btloader, app.pyoncord
 Filename: debs/cocobo1.kettu.tweak_2.0.0_iphoneos-arm.deb
-Size: 31460
-MD5sum: 0b9ce07a75d4c7b5d30b261bccb6cd5f
-SHA1: 07781926c581f7641075450a9370e0d662fbef7d
-SHA256: 78fe966a182ce576905657790dafca9ba5212dcc4d053e63d84b40b953dd8915
-SHA512: 3ed90ee869829c20f969bb6ed214dec77670f706030dadc655df6a2a634598bf0c77a6418e28a2ddd4b7025d80db6f6eefd064229209b0580cf3dbf64f5b1e5a
+Size: 31468
+MD5sum: 80a37eb843e46db0e9de0da6b105dc3e
+SHA1: 46c92a2c8fa8e0e9bafe562eb6d0f1284b4d81c9
+SHA256: bf5bbde67c3c1a1a1eabac00489ae48adb261df05ff11feb8635484b85bc37f1
+SHA512: 95d3fa6b6e34256cad67aed78307357ed3f1d1aba0e4a5c16b6ada45bd0eb4b7fd863467ebc2289ae91c24af8f3261d1bb2ec5c2a0ccee93169eee7a41aae68e
 Section: Tweaks
+Homepage: https://github.com/C0C0B01/KettuTweak
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
 Name: KettuTweak
@@ -44,12 +45,13 @@ Installed-Size: 19600
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm.deb
-Size: 7160388
-MD5sum: f1f66e51837239901a34ccd074d9b77b
-SHA1: fe1e5275a31067c851182ce3f6bedfc4b3e34952
-SHA256: bb340bcca0de9eb2e1bd38c680651009d6ec34efaffb576187d6fcd3bdcf4d62
-SHA512: cdf2411631e3738b5f630c7316f652e784415b3030f96ae612299b24fa296c5cab5c5b2a421ec1b88d87cc6a42fcf4e34e581252b192b75291ade600be782255
+Size: 7164780
+MD5sum: a5063fe3703f1334518f86b6f4e44a15
+SHA1: 915c2ccfa380159b0ee62bb09f1fee397b84b303
+SHA256: a8d03991a314c7de1205d9a6420d664347db4e511037556ad3eb8f0fabd55dbc
+SHA512: 8a06a2d28fa9e5f26cfeea913bed3341a9aa8192116e6bead4c7402601b9721ba3943e5936c874187ac762bca30dd9a2769458e0f7c140975d6fbc59a39d74a3
 Section: Tweaks
+Homepage: https://github.com/NeoFreeBird/tweak
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
 Name: NFB-BHTwitter
@@ -82,11 +84,11 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm.deb
-Size: 79078
-MD5sum: f4dade762be86ac7b62e0161176f227e
-SHA1: b273a355bf97a19e3a51d0f133158153f646e4b8
-SHA256: 3cad4315bbbcb09763b1ab0c922dbfddf573471c2b6ddbbd27b186debaeb9b9d
-SHA512: 6fdee1ada07051fb943199628eade4ffff21f91a12cf8f543160847801604ecefd10052459ffebd69ee84b0317e087f41a8c8e113d4d78c846945ef191df7ce1
+Size: 79040
+MD5sum: 849f869e5d8d2885710da884d72cd2c4
+SHA1: ecde1a019fca4690b5c0107bfa2fbdfbc67518ee
+SHA256: 81c52d6c21f6b282f5724ebbba2e4dd41caea321103c3edd837088b1473efb8c
+SHA512: 17dc63d15f76642e02e9202712f88ae125a55e53e63cea8ef0c0b4b2471f743cc55fc6dd01ae7cd29e398414b7e4f66ada75250de78745aee70342e76e0402d4
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
@@ -140,12 +142,13 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound, com.cloudysnow.btloader, app.pyoncord
 Filename: debs/cocobo1.kettu.tweak_2.0.0_iphoneos-arm64.deb
-Size: 31542
-MD5sum: ee687263eb44a160b7ec40b9a37760e2
-SHA1: c2cfb1d5fe1091c1642eaa0c53140db320900509
-SHA256: 0d554ae4f27e8c72c0c09f3c7944141f17bd8366fa172c3a512a06d2fbed4d36
-SHA512: 4163577b2660efc528235809569b4072e021f4fb8d80971d5785fd6284179a09816451e9545f18691fa4f3a31b57d68dd5d1c24549e80b959d668e199740dea7
+Size: 31558
+MD5sum: e91d2bbc775ee0afe98d233fe15cfacb
+SHA1: 42f34c5d78fc1c1b7b2466fc0b86541551e0bf4d
+SHA256: a906233296daf5952175988b2405eadb1224574646c087009ad8e8e8df5796fd
+SHA512: 5636e0ed9ee2071a7008bd0642eaff8b3103717225c7eda69aa1a13319db81af123fbb459b564607b8cdadb1559a5926444be138f3ac3696e17569b18c1779bf
 Section: Tweaks
+Homepage: https://github.com/C0C0B01/KettuTweak
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
 Name: KettuTweak
@@ -178,12 +181,13 @@ Installed-Size: 19600
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm64.deb
-Size: 7162796
-MD5sum: b76d226b4018ddce35dba442b91c5fcb
-SHA1: 6ff7c178b29196937b2954ddf0927e3ba0a70f6c
-SHA256: 1307ef129b2161bff6b4ff1f237e4291bb63b14c24b063abd9fa032c810a5782
-SHA512: 04a9e75734a98221b079ef0e83e2ba8c9dd0008ea3d38f03a0c911b3a7ef77a8750e785ceb4583923a3b8673778ab951ffc2c186202aab99766efde178a36218
+Size: 7160928
+MD5sum: 45885c61b2d21d9a921625bda9d9ffa8
+SHA1: 0f4eb21b55421f03373eee83f227d7022bf8c99c
+SHA256: 6a4e215e913049d01a89ce7961145d9373d1ec7ece913a4a88c31549cb874d1d
+SHA512: 2337b43dd2a7e1c75a4f391304e1bd86ed4c71940120accf74719d85168d04d1afeea660f0dfcd1876f936f1c28cfc182e7a5d44627cb8bb20df5f566396205d
 Section: Tweaks
+Homepage: https://github.com/NeoFreeBird/tweak
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
 Name: NFB-BHTwitter
@@ -216,11 +220,11 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm64.deb
-Size: 79204
-MD5sum: 89e79788783e52de6b5b5eb6f220ed32
-SHA1: 010643b76f81d71097727dc9611c52ef309bd723
-SHA256: 5bbdd87aab7c53060630b6bd5405e7ab91e3657957498f124064792f87475fa6
-SHA512: 907302440f9fb713d56931ba35ab061256aa9309a85fc6e748e120d37f9b542ad43224216b09c213ecb4481d126e89ee9a9f7f38ac231737ca4389778ab950f3
+Size: 79142
+MD5sum: e682ac444c015ffb82a3ccaeaa90d04c
+SHA1: 0b2abcce7b1b2ba424c9cd4f4db3fd6444be5906
+SHA256: 0fd449211034b7440b04b4fe92af8282e2cd86c4c3355dc5b06d7b80186814dc
+SHA512: 010859a973fff3fae6217d2deeff6a15b8c9ca4c61aadb4a199fe22f6c02106bfed7aa8936defaa8e1685a79a8bdcea284c4c56289c2858aec78986d3c3a81e8
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
