@@ -111,12 +111,34 @@ jobs:
             echo " ${hash} ${size} ${f}" >> Release
           done
 
+      - name: Sign Release (InRelease + Release.gpg)
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          if [ -z "$GPG_PRIVATE_KEY" ]; then
+            echo "GPG_PRIVATE_KEY secret not set — skipping signing"
+            exit 0
+          fi
+          export GNUPGHOME=$(mktemp -d)
+          echo "$GPG_PRIVATE_KEY" | gpg --batch --import
+          KEY_ID=$(gpg --list-secret-keys --with-colons | awk -F: '/^sec/ {print $5; exit}')
+          SIGN=(gpg --batch --yes --pinentry-mode loopback --passphrase "$GPG_PASSPHRASE" --local-user "$KEY_ID" --digest-algo SHA512)
+          "${SIGN[@]}" --clearsign --output InRelease Release
+          "${SIGN[@]}" --armor --detach-sign --output Release.gpg Release
+          # Publish the public key so users can verify the repo
+          gpg --armor --export "$KEY_ID" > silko.asc
+          gpg --verify InRelease
+          gpg --verify Release.gpg Release
+          rm -rf "$GNUPGHOME"
+
       - name: Commit updated indexes back to repo
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           
           git add Packages Packages.zst Packages.xz Packages.bz2 Packages.gz Release || true
+          git add InRelease Release.gpg silko.asc 2>/dev/null || true
           git add -A debs/
           git commit -m "chore: prune old debs, update Packages indexes [ci skip]" || echo "No changes to commit"
           git pull --rebase
