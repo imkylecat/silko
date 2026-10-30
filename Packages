@@ -6,10 +6,10 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound, com.cloudysnow.btloader, app.pyoncord
 Filename: debs/cocobo1.kettu.tweak_2.0.0_iphoneos-arm.deb
-Size: 31064
-MD5sum: b2d5b9cf92699e4e3468949b771cee68
-SHA1: 19766484a9439c1f00839ec981e5eb6b8f2775a8
-SHA256: 2cc8edd518a8d6e6727983ffed1da7a9732307a099b60d22b3a5bc690965e707
+Size: 31244
+MD5sum: 01a4ac84c648cf4694dd3cbd9e4a8b05
+SHA1: 4cdc67f6723778762472d9ec9d682482f3e5b89e
+SHA256: 415218abc119d2e6e7fdc7982bfdb6d2044e13e6c766ea0652f0f61d5d66d30e
 Section: Tweaks
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
@@ -22,10 +22,10 @@ Maintainer: Amy While <support@anamy.gay>
 Installed-Size: 1968
 Depends: firmware (>= 14.0)
 Filename: debs/com.amywhile.aemulo_2.0-dd2a2db_iphoneos-arm.deb
-Size: 610112
-MD5sum: dda1372ea60295945e450a03a99bbbbf
-SHA1: a32aacb3054add27f8b03d382294c125767ac8b4
-SHA256: 43f1f52717592dac896c5b38b4c4e464f591954d610f820e8ef988a2bfc8a910
+Size: 610292
+MD5sum: e63e426d88dc74bf8c5fc0f057eb736b
+SHA1: d1c866d834452a85e1345fe78ff4ffe0bfa00277
+SHA256: c0bebc427965125137293a24f9bfc92ed0f7025f54adbd3ea221dbe6f7203a59
 Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
@@ -39,10 +39,10 @@ Installed-Size: 19616
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm.deb
-Size: 7159472
-MD5sum: d1f4ca32f2184e1e24b8b4af2a493f08
-SHA1: babad2e1942b1941dc794487aa41560b73a805e6
-SHA256: d3d24cc02064620788d06bb7ad2a2c9ac8b0d4fc00a231e8a9a1610caab67867
+Size: 7159652
+MD5sum: ac4a05d28fa1438559624ef8d5c027c2
+SHA1: 077db33558d328393b4ccd46c47e8587fc417c43
+SHA256: 415d1ab11310507b7bc3b77e8e6c8b7f420e2637f989aeba0e710c2574c3e1d9
 Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
@@ -56,10 +56,10 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound
 Filename: debs/com.cloudysnow.btloader_1.0.2_iphoneos-arm.deb
-Size: 28936
-MD5sum: e6921ffb0cea119546685c309e7351a7
-SHA1: af471c06d8331b9824716bc814be1b3593d42160
-SHA256: 258e22fa971649b07ab804dd202c345dbd2a4a890b500e4e28e0194a4090ca2f
+Size: 29116
+MD5sum: 2cc2f0e3a4461351e55da639bd67a12f
+SHA1: cf8aff2c5703c2584257d1381bdfb8ad6cb011af
+SHA256: 800ef7cbcaa7893fb060373efab8e66d2aee415429a4743d902ae296cbed3da9
 Section: Tweaks
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
@@ -72,15 +72,29 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm.deb
-Size: 78540
-MD5sum: 94edec66f129c8b69200c675c84779d4
-SHA1: 297c3576e325d3a000166c5f96c31544c37f57a2
-SHA256: 38c3715a6ce08c656fea913b5ab4d7dfc0b1bf976e0b1bd2ce2071727d0e1a0f
+Size: 78720
+MD5sum: e816fa851f22f8b53f2ce60e4757cc58
+SHA1: 34e083f87ef74559cb51dc728232e032c8b9f86b
+SHA256: 3f963e3b04aa1a3bd73e2b11dc5a19da52df30b927b8790f6b43ec8ee6cb86b4
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
 Author: SoCuul
 Name: SCInsta
+
+Package: silko-keyring
+Version: 2026.10.30
+Architecture: iphoneos-arm
+Maintainer: Kyle
+Filename: debs/silko-keyring_2026.10.30_iphoneos-arm.deb
+Size: 1142
+MD5sum: c1ddd7fe2df46edd57b94f869dc86bdf
+SHA1: e2488a2007b44a9a20057b62946302b8e9a7f418
+SHA256: 5c4acad0ebef4dfdf216ba8052a09dcacca4a73ace219b83c313144c7eb4d762
+Section: Repo Managers
+Description: Installs the Silko signing key so apt can verify the repo
+Author: Kyle
+Name: Silko Keyring
 
 Package: ws.hbang.common
 Version: 1.17.1
@@ -89,10 +103,10 @@ Maintainer: HASHBANG Productions <support@hbang.ws>
 Installed-Size: 1852
 Depends: firmware (<< 8.0) | firmware (>= 11.0) | com.rpetrich.rocketbootstrap
 Filename: debs/ws.hbang.common_1.17.1_iphoneos-arm.deb
-Size: 208096
-MD5sum: a1a27d51f93da4262059fe937e025f35
-SHA1: d546e6520c107d8fa6e748c97244dcdbf38603ad
-SHA256: dca96478c832a552b35e77afa7b4950c66a00a06e0e467006b543adcaa2e92d0
+Size: 208276
+MD5sum: e79a315fddd4508bf141756f2f229ee9
+SHA1: 9b8633a49ce78979bbbe247245d2cccb60abf09b
+SHA256: d89cf6d098bfc0804c6178a87f3a51dbf228eb6406e890324890d42ad7a41552
 Section: Development
 Description: Support library for tweaks
 Tag: role::developer, compatible_min::ios5.0
@@ -110,10 +124,10 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound, com.cloudysnow.btloader, app.pyoncord
 Filename: debs/cocobo1.kettu.tweak_2.0.0_iphoneos-arm64.deb
-Size: 31146
-MD5sum: b4198fca1ff3bdd5185c6f8e2341a17b
-SHA1: 4982145e94f6b9cea2ce2b3c0165b80cdb047114
-SHA256: 1f2af1ac32c4af365469179df0212ce4ba04167cc91b9014a7e9f3a2e2d0cecf
+Size: 31326
+MD5sum: 6ca93cb6d5f5a035b1f8787dada55090
+SHA1: 388881a457b2d4db716b6dd6583e02a72b253d10
+SHA256: 7392d8a7443b096e1cca05c0070c87f4ff59b7be5be46995763116891cc81d8d
 Section: Tweaks
 Description: A tweak to inject Kettu into Discord
 Author: cocobo1, Bwlok
@@ -126,10 +140,10 @@ Maintainer: Amy While <support@anamy.gay>
 Installed-Size: 1968
 Depends: firmware (>= 14.0)
 Filename: debs/com.amywhile.aemulo_2.0-dd2a2db_iphoneos-arm64.deb
-Size: 610446
-MD5sum: 392a553312fa205a92f05975e9b3dd64
-SHA1: 64de7aaa43647b537ba83d10011bcaf83be9c194
-SHA256: caf67844ac7f51c005b9381d8d4cb843f8facac73273fbabde003bd07f28e4e4
+Size: 610626
+MD5sum: fd81e00f264a24d93feccdd4644f0a6b
+SHA1: a8db4ecf46e13ffab2ebf75ebe8381df9300a6ed
+SHA256: 5afd4112c6a1ba7beee0a43241c9176df6288d0b004bd3d1c6a82978cea7287c
 Section: Utilities
 Description: NFC Frickery
 Author: Amy While <support@anamy.gay>
@@ -143,10 +157,10 @@ Installed-Size: 19616
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm64.deb
-Size: 7159142
-MD5sum: c230238ab32814bc06559df007026d7f
-SHA1: 8fce203638d12726943b65bfa6a5c90949d8f4fe
-SHA256: 63067cde266e08cb1faab0dfd9e26c65db81ba1b68c5e8e580cbecf48bf6836e
+Size: 7159322
+MD5sum: f9e65d49ea76f11419da7e4ba51c4adb
+SHA1: d8733ee8523cf9df8703298b48b88d0ea589497b
+SHA256: afa8ee21470a9e5b9e7aefbbc00d9720288f95ef9c075c2e6fa85239f5206119
 Section: Tweaks
 Description: Awesome tweak for Twitter
 Author: NeoFreeBird
@@ -160,10 +174,10 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound
 Filename: debs/com.cloudysnow.btloader_1.0.2_iphoneos-arm64.deb
-Size: 29052
-MD5sum: e2aebe4a633c3a36539db469ca1addbc
-SHA1: 295d80953efebb4bf333e9c7307ce722486ffded
-SHA256: e91ea6241f6b28f2b9a14c780f7dfdee39c79305eaa75df206c7281bc4ebe9b7
+Size: 29232
+MD5sum: 28136c589b71f9a285630f5005f01bf1
+SHA1: be39591f15d4bba6389c6b85fb2a7f78030947e2
+SHA256: fe6e77ae91ceac7499da559d8690995bc7679197f7be8a983492e1fbddaf72ce
 Section: Tweaks
 Description: A client modification for Discord's mobile app.
 Author: CloudySn0w
@@ -176,15 +190,29 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm64.deb
-Size: 78582
-MD5sum: 06545664ed4ca4d557c7e7236c14129c
-SHA1: b24a28a970d0f67aa905ed196db24ec2930058d7
-SHA256: 7bbdeaa3e2ad0d99d24ddf5e0f9bba68b626f9d1d10ebe83a018d65b5e7bc3f0
+Size: 78762
+MD5sum: 0de20ec964e0e3ec0e1fe97db1c39e9e
+SHA1: 32806f1bcba46df70ba5963032411eeecef0bd56
+SHA256: 7a14342149c8a7ba10006c094269fc8a7ec8a8b2b84f09cd3fab542450bfa4a0
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
 Author: SoCuul
 Name: SCInsta
+
+Package: silko-keyring
+Version: 2026.10.30
+Architecture: iphoneos-arm64
+Maintainer: Kyle
+Filename: debs/silko-keyring_2026.10.30_iphoneos-arm64.deb
+Size: 1164
+MD5sum: c76a9c85acde6e10b625372e0d52095a
+SHA1: ac14954c3e20e37433fe01cd2b245809da6ece4c
+SHA256: c97da5db3c32f8d52008a86f8b987700fc8aa97dca3f2599f0f183b584fd3220
+Section: Repo Managers
+Description: Installs the Silko signing key so apt can verify the repo
+Author: Kyle
+Name: Silko Keyring
 
 Package: ws.hbang.common
 Version: 2.0
@@ -193,10 +221,10 @@ Maintainer: HASHBANG Productions <support@hbang.ws>
 Installed-Size: 3132
 Depends: firmware (>= 15.0)
 Filename: debs/ws.hbang.common_2.0_iphoneos-arm64.deb
-Size: 198906
-MD5sum: b41babea6af14166166ac70da0d472bb
-SHA1: d7703febee3eaea3b1319d18cff7c7d59a9af2ab
-SHA256: 67338fa3f52951d5cbb900e8582e15dfff5964104bf627643bfe3901cda69652
+Size: 199086
+MD5sum: 0c4cf0911e00a61037a76e9338097118
+SHA1: 4af542b4e180615318cb2d9b4ecb52eb796be052
+SHA256: c0d3d1fafcd0f745dec9a2f18980a1b4e6e5979cd12a3dadfdc5c2774c210fc5
 Section: Development
 Description: Support library for tweaks
 Tag: role::developer, compatible_min::ios15.0
