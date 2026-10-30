@@ -64,8 +64,14 @@ jobs:
         run: |
           sed -i '/^Header:/d; /^Icon:/d; /^SileoDepiction:/d; /^Native-Depiction:/d' Packages
 
-      - name: Compress to Packages.bz2 (Sileo prefers this)
-        run: bzip2 -k -f Packages   # -k = keep original, -f = force overwrite
+      - name: Compress Packages (zst, xz, bz2, gz)
+        run: |
+          # -k = keep original, -f = force overwrite
+          command -v zstd >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq zstd)
+          zstd -q -19 -k -f Packages
+          xz -9 -k -f Packages
+          bzip2 -9 -k -f Packages
+          gzip -9 -n -k -f Packages
 
       - name: (Optional) Update Release file hashes
         run: |
@@ -84,21 +90,21 @@ jobs:
 
           # Add MD5/SHA256/SHA512 of Packages* with proper Debian format: hash size filename
           echo "MD5Sum:" >> Release
-          for f in Packages Packages.bz2; do
+          for f in Packages Packages.zst Packages.xz Packages.bz2 Packages.gz; do
             hash=$(md5sum "$f" | awk '{print $1}')
             size=$(wc -c < "$f" | tr -d ' ')
             echo " ${hash} ${size} ${f}" >> Release
           done
 
           echo "SHA256:" >> Release
-          for f in Packages Packages.bz2; do
+          for f in Packages Packages.zst Packages.xz Packages.bz2 Packages.gz; do
             hash=$(sha256sum "$f" | awk '{print $1}')
             size=$(wc -c < "$f" | tr -d ' ')
             echo " ${hash} ${size} ${f}" >> Release
           done
 
           echo "SHA512:" >> Release
-          for f in Packages Packages.bz2; do
+          for f in Packages Packages.zst Packages.xz Packages.bz2 Packages.gz; do
             hash=$(sha512sum "$f" | awk '{print $1}')
             size=$(wc -c < "$f" | tr -d ' ')
             echo " ${hash} ${size} ${f}" >> Release
@@ -109,9 +115,9 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           
-          git add Packages Packages.bz2 Release || true
+          git add Packages Packages.zst Packages.xz Packages.bz2 Packages.gz Release || true
           git add -A debs/
-          git commit -m "chore: prune old debs, update Packages & bz2 [ci skip]" || echo "No changes to commit"
+          git commit -m "chore: prune old debs, update Packages indexes [ci skip]" || echo "No changes to commit"
           git pull --rebase
           git push
         env:
