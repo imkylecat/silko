@@ -10,6 +10,7 @@ on:
   workflow_run:
     workflows: 
       - "Fetch Aemulo Debs"
+      - "Fetch Cephei Debs"
       - "Build BTLoader (Rootless + Rootful)"
       - "Build KettuTweak (Rootless + Rootful)"
       - "Build BHTwitter (Rootless + Rootful)"

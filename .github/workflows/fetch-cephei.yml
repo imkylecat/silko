@@ -1,0 +1,86 @@
+name: Fetch Cephei Debs
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '.github/workflows/fetch-cephei.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * 0" # weekly check every Sunday at noon UTC
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    name: Download latest Cephei debs from Chariz
+    runs-on: ubuntu-latest
+
+    env:
+      REPO_URL: https://repo.chariz.com
+      PACKAGE: ws.hbang.common
+      USER_AGENT: Telesphoreo APT-HTTP/1.0.592
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch latest debs (rootless + rootful)
+        run: |
+          curl -fsSL -A "$USER_AGENT" -o Packages.chariz.bz2 "${REPO_URL}/Packages.bz2"
+          bzip2 -dc Packages.chariz.bz2 > Packages.chariz
+
+          for arch in iphoneos-arm64 iphoneos-arm; do
+            # Find the newest version of the package for this architecture
+            best_ver=""; best_file=""; best_sha=""
+            while IFS='|' read -r ver file sha; do
+              if [ -z "$best_ver" ] || dpkg --compare-versions "$ver" gt "$best_ver"; then
+                best_ver=$ver; best_file=$file; best_sha=$sha
+              fi
+            done < <(awk -v pkg="$PACKAGE" -v arch="$arch" '
+              BEGIN { RS = ""; FS = "\n" }
+              {
+                p = v = a = f = s = ""
+                for (i = 1; i <= NF; i++) {
+                  split($i, kv, ": ")
+                  if (kv[1] == "Package") p = kv[2]
+                  else if (kv[1] == "Version") v = kv[2]
+                  else if (kv[1] == "Architecture") a = kv[2]
+                  else if (kv[1] == "Filename") f = kv[2]
+                  else if (kv[1] == "SHA256") s = kv[2]
+                }
+                if (p == pkg && a == arch) print v "|" f "|" s
+              }' Packages.chariz)
+
+            if [ -z "$best_ver" ]; then
+              echo "No ${PACKAGE} found for ${arch}"
+              exit 1
+            fi
+
+            out="debs/${PACKAGE}_${best_ver}_${arch}.deb"
+            echo "Downloading ${PACKAGE} ${best_ver} (${arch})..."
+            curl -fsSL -A "$USER_AGENT" -o "$out" "${REPO_URL}/${best_file#./}"
+            echo "${best_sha}  ${out}" | sha256sum -c -
+            dpkg-deb -f "$out" Package Version Architecture Depends
+          done
+
+          rm -f Packages.chariz Packages.chariz.bz2
+
+      - name: Commit new debs
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add debs/*.deb
+          git diff --cached --quiet && echo "No changes — already up to date" && exit 0
+          git commit -m "chore: update Cephei debs [ci skip]"
+          git pull --rebase
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
