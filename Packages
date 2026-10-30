@@ -97,6 +97,26 @@ Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.redditfilter
 Name: RedditFilter
 Tag: compatible_min::ios11.0
 
+Package: com.level3tjg.twitchadblock
+Version: 0.1.5
+Architecture: iphoneos-arm
+Maintainer: level3tjg
+Installed-Size: 108
+Depends: mobilesubstrate
+Filename: debs/com.level3tjg.twitchadblock_0.1.5_iphoneos-arm.deb
+Size: 19380
+MD5sum: 85fc9efdeac5357576f5afd9edb56adf
+SHA1: 0d76c529e071de3631ff88d2368500bcbd64bd1e
+SHA256: 940d7aec559d4ade8406173f6b9cdcdb53b0e6fa9c9eef9d8688689822703229
+SHA512: 4635d3fa745d771860f788afbb58f2f90ac8022ac1db5fa3ee6019bf85e9673e986c5d27faa03f50d4dc0b206d227b68821ca2455b87fca97d81c8383b3e667a
+Section: Tweaks
+Homepage: https://github.com/level3tjg/TwitchAdBlock
+Description: Block Twitch video ads
+Author: level3tjg
+Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.twitchadblock
+Name: TwitchAdBlock
+Tag: compatible_min::ios12.4
+
 Package: com.socuul.scinsta
 Version: 1.1.1
 Architecture: iphoneos-arm
@@ -251,6 +271,26 @@ Description: Filter out unwanted content from your Reddit feed
 Author: level3tjg
 Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.redditfilter
 Name: RedditFilter
+Tag: compatible_min::ios15.0
+
+Package: com.level3tjg.twitchadblock
+Version: 0.1.5
+Architecture: iphoneos-arm64
+Maintainer: level3tjg
+Installed-Size: 108
+Depends: mobilesubstrate
+Filename: debs/com.level3tjg.twitchadblock_0.1.5_iphoneos-arm64.deb
+Size: 19378
+MD5sum: 144395085fbcf72d2a5dbe0757e34607
+SHA1: 991c497394db788f03533d496b9acfec44c25c30
+SHA256: dfc2a53cf55fe0696abddb2b8ef7d8da91695c47bdc96df47103cd6ce9401fc1
+SHA512: 824c2aade7dbc7d26663663df38c25f46e137065dbb5dbe58eef1fd72ddd1571e3eb382c1c215187f63844bac8feb90e2771b920567fe9d4e159641bffe8b983
+Section: Tweaks
+Homepage: https://github.com/level3tjg/TwitchAdBlock
+Description: Block Twitch video ads
+Author: level3tjg
+Depiction: https://level3tjg.me/repo/depictions/?p=com.level3tjg.twitchadblock
+Name: TwitchAdBlock
 Tag: compatible_min::ios15.0
 
 Package: com.socuul.scinsta
