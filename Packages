@@ -45,11 +45,11 @@ Installed-Size: 19600
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm.deb
-Size: 7164780
-MD5sum: a5063fe3703f1334518f86b6f4e44a15
-SHA1: 915c2ccfa380159b0ee62bb09f1fee397b84b303
-SHA256: a8d03991a314c7de1205d9a6420d664347db4e511037556ad3eb8f0fabd55dbc
-SHA512: 8a06a2d28fa9e5f26cfeea913bed3341a9aa8192116e6bead4c7402601b9721ba3943e5936c874187ac762bca30dd9a2769458e0f7c140975d6fbc59a39d74a3
+Size: 7153020
+MD5sum: 12f9c03d60308591c21e95831051c073
+SHA1: 1eb3d538bce1b4bf1f3390556eac1160e55eaf3a
+SHA256: 0901ee36485693525ad739c9b036c9818883b51761ee473151272aae8e645a87
+SHA512: 4b3b2f67e00761be2aa16fa1ccfac4c1488fafe237985c9932823fd99ee3ec4e11296b43dbb06810eaed4ebe2702d5641dd7176b9a8ae050b752ea902823f649
 Section: Tweaks
 Homepage: https://github.com/NeoFreeBird/tweak
 Description: Awesome tweak for Twitter
@@ -124,11 +124,11 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm.deb
-Size: 79040
-MD5sum: 849f869e5d8d2885710da884d72cd2c4
-SHA1: ecde1a019fca4690b5c0107bfa2fbdfbc67518ee
-SHA256: 81c52d6c21f6b282f5724ebbba2e4dd41caea321103c3edd837088b1473efb8c
-SHA512: 17dc63d15f76642e02e9202712f88ae125a55e53e63cea8ef0c0b4b2471f743cc55fc6dd01ae7cd29e398414b7e4f66ada75250de78745aee70342e76e0402d4
+Size: 79198
+MD5sum: 7d4d46780e456e0bfe97ce02cddded5e
+SHA1: dea505c8dce4d35d541b3c40cac28016217a4b69
+SHA256: 683c47bca713a9ec3b83826ac6b475f622670af5ceeb2d36b999b2fbe6bc5a4c
+SHA512: d911aa91727d6cc0aadbb8e8f9a06857db0884851d0ad272691a7cf2390abb071722d7de43123712f17e7b32debf503542232f83ba921347a8924bee75e0b315
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
@@ -221,11 +221,11 @@ Installed-Size: 19600
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm64.deb
-Size: 7160928
-MD5sum: 45885c61b2d21d9a921625bda9d9ffa8
-SHA1: 0f4eb21b55421f03373eee83f227d7022bf8c99c
-SHA256: 6a4e215e913049d01a89ce7961145d9373d1ec7ece913a4a88c31549cb874d1d
-SHA512: 2337b43dd2a7e1c75a4f391304e1bd86ed4c71940120accf74719d85168d04d1afeea660f0dfcd1876f936f1c28cfc182e7a5d44627cb8bb20df5f566396205d
+Size: 7161960
+MD5sum: c6ff447ddda14b4597b77c81a0de9710
+SHA1: 922e73a39a1bd3e0dcca3927aa283cfe11f44c5b
+SHA256: 8aa97067c3262625fb0f6a9efb3cd1e33d17efe4d35f8e8101d91ad6323d6cc1
+SHA512: c2dfa2f0dc1bd8ef5dbf1466d3ceb695326848703bbb5ea951b9594f88695e919f1e0ce7ce7ad2ab0623bb3b0d06727e95e0dec1f0ae12b45770e142d8b534be
 Section: Tweaks
 Homepage: https://github.com/NeoFreeBird/tweak
 Description: Awesome tweak for Twitter
@@ -300,11 +300,11 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm64.deb
-Size: 79142
-MD5sum: e682ac444c015ffb82a3ccaeaa90d04c
-SHA1: 0b2abcce7b1b2ba424c9cd4f4db3fd6444be5906
-SHA256: 0fd449211034b7440b04b4fe92af8282e2cd86c4c3355dc5b06d7b80186814dc
-SHA512: 010859a973fff3fae6217d2deeff6a15b8c9ca4c61aadb4a199fe22f6c02106bfed7aa8936defaa8e1685a79a8bdcea284c4c56289c2858aec78986d3c3a81e8
+Size: 79226
+MD5sum: 81e51ab51218648d36a02279fc24ec9c
+SHA1: ed0d681de59b212738416d88768d8208de23801c
+SHA256: b246951cb79c90100099a08b329630318722f3824d68f15185c789da7fa9bc8a
+SHA512: 9172aa8cf1d0073e8c2eb09b0d7001d605a9f17d976931de1ef92bda9554371a7b21611e71ffc69dade72da99912a41c609655ccf3812faeef912fbbafe012c5
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
