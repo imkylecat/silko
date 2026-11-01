@@ -6,11 +6,11 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound, com.cloudysnow.btloader, app.pyoncord
 Filename: debs/cocobo1.kettu.tweak_2.0.0_iphoneos-arm.deb
-Size: 31468
-MD5sum: 80a37eb843e46db0e9de0da6b105dc3e
-SHA1: 46c92a2c8fa8e0e9bafe562eb6d0f1284b4d81c9
-SHA256: bf5bbde67c3c1a1a1eabac00489ae48adb261df05ff11feb8635484b85bc37f1
-SHA512: 95d3fa6b6e34256cad67aed78307357ed3f1d1aba0e4a5c16b6ada45bd0eb4b7fd863467ebc2289ae91c24af8f3261d1bb2ec5c2a0ccee93169eee7a41aae68e
+Size: 31480
+MD5sum: 54c473dbd21fd9816ae34b6d3c176ef9
+SHA1: ea92a97d997631adf8c39159324644828c02d195
+SHA256: 82c79b2f8e3c336f5c46081e60f4af6aac7edd73ef38d84f6f7b51790626e6e0
+SHA512: 062d48768a422505754c6e92fa504ecd67d8fdfc1e26fdca5d180690c83a146f91437542b4a459fb84b2dbd0ccb00fb003af59d6d0096a799618fa72e5c2b54f
 Section: Tweaks
 Homepage: https://github.com/C0C0B01/KettuTweak
 Description: A tweak to inject Kettu into Discord
@@ -182,11 +182,11 @@ Installed-Size: 168
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: app.enmity, mod.vendetta, app.unbound, com.cloudysnow.btloader, app.pyoncord
 Filename: debs/cocobo1.kettu.tweak_2.0.0_iphoneos-arm64.deb
-Size: 31558
-MD5sum: e91d2bbc775ee0afe98d233fe15cfacb
-SHA1: 42f34c5d78fc1c1b7b2466fc0b86541551e0bf4d
-SHA256: a906233296daf5952175988b2405eadb1224574646c087009ad8e8e8df5796fd
-SHA512: 5636e0ed9ee2071a7008bd0642eaff8b3103717225c7eda69aa1a13319db81af123fbb459b564607b8cdadb1559a5926444be138f3ac3696e17569b18c1779bf
+Size: 31584
+MD5sum: 994123f68ce22be9480ee875b3bc9e5a
+SHA1: 670a17751b47add1c0d4e0556dc062db1efd358b
+SHA256: 8b6b7851031d2e0ccb403735b5ebb5c62e1e61024e59cf26dfba3d39601bc9cf
+SHA512: ccb0ba2b06ff3721b8cfaea0805d20bae132064e99d69bf99d7981b3b0b8b7a1efd6de62233c7451ef8b7a79bb0c161ce213b4e43fd22434781d8a047a9dea9a
 Section: Tweaks
 Homepage: https://github.com/C0C0B01/KettuTweak
 Description: A tweak to inject Kettu into Discord
