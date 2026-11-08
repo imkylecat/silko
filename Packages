@@ -84,11 +84,11 @@ Maintainer: level3tjg
 Installed-Size: 96
 Depends: mobilesubstrate (>= 0.9.5000)
 Filename: debs/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb
-Size: 17408
-MD5sum: 96f0f43a053655370a685fab507af3bd
-SHA1: e029dc408d1a306cfbe7330230c219dcf1adea53
-SHA256: 76db4316a903c4d4772ecae5ab12fd8a2c817356c685b4b44ef05a887d1926ff
-SHA512: a4ed864d522c3ad19f34e53cec67d00a8f9392ff0445f2e31f4b5b82d38c9070b17224961394224cd7b61db6bf4c2b3627a7a15dfe53d53c7397bb9487eae9d4
+Size: 17416
+MD5sum: c7ba23010c3bcef6917c37420932c4cf
+SHA1: 5b9e67bb1b6a7f12b1a6104171d09aa911b7b858
+SHA256: 5f6b25c428afa9f43e847383f7929ccb137afb89f613764235b543aeb374924d
+SHA512: ec21451a97b866505d429c2597f27340117579df43037ac0c265d4ec3b9d0e96539cc9721121162830aa0d495b9f912670466299f78c2d1ff97e737ea52db1a7
 Section: Tweaks
 Homepage: https://github.com/level3tjg/RedditFilter
 Description: Filter out unwanted content from your Reddit feed
@@ -260,11 +260,11 @@ Maintainer: level3tjg
 Installed-Size: 96
 Depends: mobilesubstrate (>= 0.9.5000)
 Filename: debs/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb
-Size: 17464
-MD5sum: de7f0d09c9550cadcdf1799af16904a7
-SHA1: 947f3b5453bf88c52980f657bac52358c4e8d870
-SHA256: b7d72a1d4b7cf8df969dc9d114303f8c9b0bd950ab74cca98eb16b6d611b4898
-SHA512: 82e3d6a437dd243717a70353e8c211c771d25ff63c9dc654ad702c41b3342ea3ab63d819356981a3bf2c870bbb31b8f9db065d308a25a1bd73838263674b6734
+Size: 17504
+MD5sum: f271c9be5bd7287511a0ad810f6766a0
+SHA1: 988d0f6585515c097dd7dad4e65b4a4ee411fe69
+SHA256: aac6b8bfa374441571b830596ce96ace8fe507ba83f374469418d436dfeebf42
+SHA512: 3ef3f1d0912cc18f14f301fc2fcee63269b2cbf2dd57b6e3fbf0d2a8213c5c9b0b8478e79b93e75178cf78c722d33fc4b5ae7f0d4023068242afb7b5b04a3f44
 Section: Tweaks
 Homepage: https://github.com/level3tjg/RedditFilter
 Description: Filter out unwanted content from your Reddit feed
