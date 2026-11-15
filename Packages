@@ -45,11 +45,11 @@ Installed-Size: 19600
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm.deb
-Size: 7162494
-MD5sum: 103e192f24c552ea632416ed695fc92e
-SHA1: 45dffa18f902aeeab05a6e9790ec64f6eff9f4e0
-SHA256: 6007ab20d9acc514055a7a64c89584f1bdac7282db5124ca12bbbab84c6a412a
-SHA512: 85d7c4c43c6650842a665b42f7a80d9164b4bbb4a86fb84599975e49e7c364a2d3b1c413102ed45df178cd24308b8f3b2bc96ad19820602f50cd3135fa035406
+Size: 7160074
+MD5sum: aeca7d1952fbdf97e2cbc629f938fc12
+SHA1: 49a0e68543fddf85e26ffc8da3d804e0d30c8c76
+SHA256: 4b5d22995b30015a6050bdbca8f4e95e6a1833ee5dde90b1d36afa7415e4b8e3
+SHA512: 28203003b658a427a6e137422ab3ed2c6d3a5e00b526d5f0881bfcaf952336b07fcb232c59e7c93327fc6276b0ae5c1d31da7691b8b58d6b1eaa8390a93dc2e3
 Section: Tweaks
 Homepage: https://github.com/NeoFreeBird/tweak
 Description: Awesome tweak for Twitter
@@ -221,11 +221,11 @@ Installed-Size: 19600
 Depends: mobilesubstrate, ws.hbang.common
 Conflicts: com.den.twigalaxy, xyz.cypwn.twigalaxy, xyz.cypwn.bhtwitter, com.netskao.twitternoads, xyz.cypwn.bringbacktwitter
 Filename: debs/com.bandarhl.bhtwitter_5.2_iphoneos-arm64.deb
-Size: 7160814
-MD5sum: 522fda9b00ac6229dcca17ab6413c37c
-SHA1: 221f7a5d50707c50fd7e399fb10fbbadeea40aa5
-SHA256: 9a39af12e0c3a258ead769c350e5e962825adc9d188cf5a76e6903ef734a8e93
-SHA512: c6669042b34a5c59dbb0291910bb5c456ede6e6e7f1daedff22bcb2eb1fd2deee5ca92b8ca528111c8295037739e3af5ce02766f7b03ac96dc4d100a6b21d182
+Size: 7152522
+MD5sum: f39f3ba15c9d6c39535fe7cbad053895
+SHA1: 50ab4fee7cd99adea9245871efa3a312d0cfef27
+SHA256: ac0b374a86e25780653a6754977d1be6500ca3956126fd2e7feabb90d3d5f969
+SHA512: c1e5f6f1a816ff5d26df1ceec8649c2f7b75222c9ba492d995dd3730578e3a24942b5e12b2455e2f1ecc271eff7bcb0803cac724d361123023d08fc69a64c6aa
 Section: Tweaks
 Homepage: https://github.com/NeoFreeBird/tweak
 Description: Awesome tweak for Twitter
