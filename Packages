@@ -124,11 +124,11 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm.deb
-Size: 79210
-MD5sum: 95ce873fdb57ab75ce3133fd79624030
-SHA1: 83475a2f663dbd6542e09ca570043d7c5c184d9c
-SHA256: 42da5f9dbce9e4d12e0eda62d04212221b53ee1a7dd91c036e4817bc6044edf4
-SHA512: 34eeb824f19e4b459e019c5e658b27d3f3ff1c74e20fdde68a85d0e90d9fc4f7f358f2bc0b43f8bc316aec1b3b0e386805eb0de765b650f39b25474ad5f15d54
+Size: 79000
+MD5sum: 32e4e751c1cf5ab0b3ef1b9481db6fe3
+SHA1: 6fa708a8ecc6cc29abe4bd794c7e16e8b627b017
+SHA256: 5607e40c619f96750e95847da154e82d94368ffc20ae9a742f429ffc37254eef
+SHA512: 3ce2bedb21dbd8e82523c676619b11ca1febfce4c647104d1b20276f00573a5f3425086c582e54e06ab1b9ded2be3e69d465ff5853204cff9893be0bc35dca54
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
@@ -300,11 +300,11 @@ Maintainer: SoCuul
 Installed-Size: 336
 Depends: mobilesubstrate
 Filename: debs/com.socuul.scinsta_1.1.1_iphoneos-arm64.deb
-Size: 79164
-MD5sum: b4d4d2e5a727f2893ac8a73cb5c9af57
-SHA1: f028d45fbfc408c0d652aecaa178531e0e8055c0
-SHA256: 1c5b14ca639c8d47f01ecb2b49904490c62025696c1ade8058d8db6b8319320d
-SHA512: f68f44cad09791f1b1faa8b97613e19e139737010c34547323ca8db3ef9bae8e8df561618dba004196391c3f67d78df6549a765f9bc4d3fa59abd952fd04935c
+Size: 79192
+MD5sum: 3ed8e0d8ed060d9c52a1de01ea16debe
+SHA1: 2a087c6ab5b4f29fcb128db0987c7b2bfe290c6a
+SHA256: 3afc12d5589ad41b46a9d2810a9bc807e53f2fffbcc3fe28b45ff9a74c0bae04
+SHA512: eebe8a46c855be19671b40ab9ccbe886b7412f658dbf6973588c2d3db492bb68e3fc1c37965660723f584e23111bdd0fa62d109b544290d6e7925472e2ebac0b
 Section: Tweaks
 Homepage: https://github.com/SoCuul/SCInsta
 Description: A feature-rich tweak for Instagram on iOS!
