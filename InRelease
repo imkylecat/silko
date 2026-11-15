@@ -9,7 +9,7 @@ Codename: ios
 Architectures: iphoneos-arm iphoneos-arm64
 Components: main
 Description: Personal repo with tweaks
-Date: Sun, 15 Nov 2026 18:37:57 +0000
+Date: Sun, 15 Nov 2026 18:40:48 +0000
 Signed-By: 32387DCC29622B87EFFA6414A26B0CA942C7386D
 MD5Sum:
  0849f4e30389ca343e95d609094b7b33 13709 Packages
@@ -31,8 +31,8 @@ SHA512:
  d27180fa275429771e3b2f44db209c3697d0d1fac34648bd84d2b857e0932e35f052cbc0b224e68b9b8ddf0dccd18a1e858db39de5f213e2238881018ad06b10 4710 Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iHUEARYKAB0WIQQyOH3MKWIrh+/6ZBSiawypQsc4bQUCavn8BQAKCRCiawypQsc4
-bUq1AP96gz3sSN457tTVz5oW1yx2tON4csn1rUu1JKzCY6hQvAEA5o8vUfqlnf7R
-OfQCSCopLcPJLlIdu4tf7xNrEq6hzwo=
-=wEVQ
+iHUEARYKAB0WIQQyOH3MKWIrh+/6ZBSiawypQsc4bQUCavn8sAAKCRCiawypQsc4
+bQUTAP4m7sfBFB3Rg2SJxuJppP3eilVtswDshyOs02d/Jr2LUQD/fFrfAhJkkC+x
+DjXSYHyV7aaYT1SFx6aQDvjngXEYzA8=
+=FgpL
 -----END PGP SIGNATURE-----
