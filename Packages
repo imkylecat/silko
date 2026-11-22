@@ -104,11 +104,11 @@ Maintainer: level3tjg
 Installed-Size: 108
 Depends: mobilesubstrate
 Filename: debs/com.level3tjg.twitchadblock_0.1.5_iphoneos-arm.deb
-Size: 19394
-MD5sum: 28e69fdde14b714f8ffe3e2c17065271
-SHA1: 3bc1153aedc3a83027419a9a0c7c72462314d663
-SHA256: 62ec717a590650a17bc14738f9d758bf5a24bd82fd605622ee0276551a7c5fa0
-SHA512: 341ee0185116a6099b27ee8731760c8724701a8a800933deec21e0718c085f06e00f084af90a8bedc045d73144299e4bdf40e07e3280cee2681dcc2c0d7964c7
+Size: 19404
+MD5sum: 00e34fc8589f186b98be59f78ca297ca
+SHA1: 02875171648416e69c301ce8ea059ee42d1d7a12
+SHA256: aa721ecf01e61a7b21836bd53eb7e79c2a07a8ba6d14fc9383cee959fba1580e
+SHA512: 53bc1c05429e240dbfe708c7127255ddd7ad76fe3565e9658c89bd58e04e4e3fcdcf370df42d7f8c721e8e980372eefde773cdbe2e2785836be15b9e4e0f9334
 Section: Tweaks
 Homepage: https://github.com/level3tjg/TwitchAdBlock
 Description: Block Twitch video ads
@@ -280,11 +280,11 @@ Maintainer: level3tjg
 Installed-Size: 108
 Depends: mobilesubstrate
 Filename: debs/com.level3tjg.twitchadblock_0.1.5_iphoneos-arm64.deb
-Size: 19350
-MD5sum: 7496bcda1654de7ff5366b556071225d
-SHA1: 507a149c0c0336220d0432e1b56577882e15c556
-SHA256: 235fd2be1e6295cac9c6169c54f645230e5763e630d74ee54161f8b507f27826
-SHA512: 7399aa1e8831806ef858e48cf0bdee3a5f2eb39473909f7f1ef819d1ad2b25abc5c24c2e4aaa670bd36717d729d8db9adae3f7c5c9c45c78f69dd9820eacf177
+Size: 19372
+MD5sum: 84e28a9c1f275e97e4615b33d62b5732
+SHA1: 49aa872b508a8ef0a395ef76333515bcab9bd1b4
+SHA256: 811ad7003c0ac45a03ce79c255972a14db1e4f352940ce138287e2a68df88315
+SHA512: 619664e6f7116977d11dbd36b96fc4673e475bdf1a0243074d3d3125425e0a0b242361455e300eb56053342d098026f85f5b83629a2f7421f2f708371d405fee
 Section: Tweaks
 Homepage: https://github.com/level3tjg/TwitchAdBlock
 Description: Block Twitch video ads
